@@ -21,6 +21,8 @@ import java.io.InputStream;
 import java.io.PushbackInputStream;
 import java.lang.reflect.Type;
 import java.util.List;
+
+import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
@@ -151,6 +153,21 @@ public class RequestResponseBodyMethodProcessor extends AbstractMessageConverter
 						public void close() throws IOException {
 							super.close();
 							pushbackInputStream.close();
+						}
+						@Override
+						public boolean isFinished() {
+							// TODO Auto-generated method stub
+							throw new UnsupportedOperationException("Auto-generated method stub");
+						}
+						@Override
+						public boolean isReady() {
+							// TODO Auto-generated method stub
+							throw new UnsupportedOperationException("Auto-generated method stub");
+						}
+						@Override
+						public void setReadListener(ReadListener readListener) {
+							// TODO Auto-generated method stub
+							throw new UnsupportedOperationException("Auto-generated method stub");
 						}
 					};
 				}
